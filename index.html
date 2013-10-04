@@ -63,6 +63,43 @@ foreach ($posts as &amp;$ent) {
   echo "$ent-&gt;getId() - $ent-&gt;getImage() - $ent-&gt;getSubject() - $ent-&gt;getBody()";
 }
 </code></pre>
+
+<h3>
+<a name="setnewentsubject-body-image" class="anchor" href="#setnewentsubject-body-image"><span class="octicon octicon-link"></span></a>setNewEnt($subject, $body, $image)</h3>
+
+<p>schreibt einen neuen Beitrag in die Datenbank
+Butze diese Funktion am besten so:</p>
+
+<pre><code>$blog-&gt;setNewEnt("First Image", "Thats my first image ever!!!", "img/portfolio.png");
+</code></pre>
+
+<h3>
+<a name="delentid" class="anchor" href="#delentid"><span class="octicon octicon-link"></span></a>delEnt($id)</h3>
+
+<p>löscht einen Eintrag aus der Datenbank
+Butze diese Funktion am besten so:</p>
+
+<pre><code>$blog-&gt;delEnt(13);
+</code></pre>
+
+<h3>
+<a name="delallent" class="anchor" href="#delallent"><span class="octicon octicon-link"></span></a>delAllEnt()</h3>
+
+<p>löscht alle Einträge aus der Datenbank
+Butze diese Funktion am besten so:</p>
+
+<pre><code>$blog-&gt;delAllEnt();
+</code></pre>
+
+<h3>
+<a name="closedb" class="anchor" href="#closedb"><span class="octicon octicon-link"></span></a>closeDB()</h3>
+
+<p>schließt die Datenbank
+<strong>rufe diese Funktion bitte immer am Ende einer PHP-Datei auf</strong>
+Butze diese Funktion am besten so:</p>
+
+<pre><code>$blog-&gt;delAllEnt();
+</code></pre>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
