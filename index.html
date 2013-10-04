@@ -1,35 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Easyportfolio by denkenreden</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Easyportfolio : EasyPortfolio is a very simple PHP-class for creating portfolios." />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Easyportfolio</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Easyportfolio</h1>
-        <p class="header">EasyPortfolio is a very simple PHP-class for creating portfolios.</p>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/denkenreden/EasyPortfolio/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/denkenreden/EasyPortfolio/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/denkenreden/EasyPortfolio">View On GitHub</a></li>
-        </ul>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/denkenreden/EasyPortfolio">View on GitHub</a>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/denkenreden">denkenreden</a></p>
+          <h1 id="project_title">Easyportfolio</h1>
+          <h2 id="project_tagline">EasyPortfolio is a very simple PHP-class for creating portfolios.</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/denkenreden/EasyPortfolio/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/denkenreden/EasyPortfolio/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-      </header>
-      <section>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
 <a name="hallo" class="anchor" href="#hallo"><span class="octicon octicon-link"></span></a>Hallo!</h1>
 
@@ -40,12 +41,12 @@
 
 <p>Erstelle dir am besten am Anfang eine PHP-Datei "install.php" mit dem Inhalt:</p>
 
-<pre><code>&lt;?php
-include("easyportfolio.php");
-$blog = new EasyPortfolio();
-$blog-&gt;createTable();
-?&gt;
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">include</span><span class="p">(</span><span class="s2">"easyportfolio.php"</span><span class="p">);</span>
+<span class="nv">$blog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EasyPortfolio</span><span class="p">();</span>
+<span class="nv">$blog</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
 
 <p>Diese PHP-Datei startest du 1x um die Datenbank zu erstellen. Jetzt kannst du sie wieder löschen; sie wird nicht mehr benötigt. Jetzt ist EasyPortfolio einsatzbereit.</p>
 
@@ -55,57 +56,68 @@ $blog-&gt;createTable();
 <h3>
 <a name="getallent" class="anchor" href="#getallent"><span class="octicon octicon-link"></span></a>getAllEnt()</h3>
 
-<p>gibt eine Array aus Einträgen des Portfolios zurück
-Butze diese Funktion am besten so:</p>
+<p>gibt eine Array aus Einträgen des Portfolios zurück</p>
 
-<pre><code>$posts = $blog-&gt;getAllEnt();
-foreach ($posts as &amp;$ent) {
-  echo "$ent-&gt;getId() - $ent-&gt;getImage() - $ent-&gt;getSubject() - $ent-&gt;getBody()";
-}
-</code></pre>
+<p>Butze diese Funktion am besten so:</p>
+
+<div class="highlight highlight-php"><pre><span class="nv">$posts</span> <span class="o">=</span> <span class="nv">$blog</span><span class="o">-&gt;</span><span class="na">getAllEnt</span><span class="p">();</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$posts</span> <span class="k">as</span> <span class="o">&amp;</span><span class="nv">$ent</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"</span><span class="si">$ent-&gt;getId</span><span class="s2">() - </span><span class="si">$ent-&gt;getImage</span><span class="s2">() - </span><span class="si">$ent-&gt;getSubject</span><span class="s2">() - </span><span class="si">$ent-&gt;getBody</span><span class="s2">()"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
 <h3>
 <a name="setnewentsubject-body-image" class="anchor" href="#setnewentsubject-body-image"><span class="octicon octicon-link"></span></a>setNewEnt($subject, $body, $image)</h3>
 
-<p>schreibt einen neuen Beitrag in die Datenbank
-Butze diese Funktion am besten so:</p>
+<p>schreibt einen neuen Beitrag in die Datenbank</p>
 
-<pre><code>$blog-&gt;setNewEnt("First Image", "Thats my first image ever!!!", "img/portfolio.png");
-</code></pre>
+<p>Butze diese Funktion am besten so:</p>
+
+<div class="highlight highlight-php"><pre><span class="nv">$blog</span><span class="o">-&gt;</span><span class="na">setNewEnt</span><span class="p">(</span><span class="s2">"First Image"</span><span class="p">,</span> <span class="s2">"Thats my first image ever!!!"</span><span class="p">,</span> <span class="s2">"img/portfolio.png"</span><span class="p">);</span>
+</pre></div>
 
 <h3>
 <a name="delentid" class="anchor" href="#delentid"><span class="octicon octicon-link"></span></a>delEnt($id)</h3>
 
-<p>löscht einen Eintrag aus der Datenbank
-Butze diese Funktion am besten so:</p>
+<p>löscht einen Eintrag aus der Datenbank</p>
 
-<pre><code>$blog-&gt;delEnt(13);
-</code></pre>
+<p>Butze diese Funktion am besten so:</p>
+
+<div class="highlight highlight-php"><pre><span class="nv">$blog</span><span class="o">-&gt;</span><span class="na">delEnt</span><span class="p">(</span><span class="mi">13</span><span class="p">);</span>
+</pre></div>
 
 <h3>
 <a name="delallent" class="anchor" href="#delallent"><span class="octicon octicon-link"></span></a>delAllEnt()</h3>
 
-<p>löscht alle Einträge aus der Datenbank
-Butze diese Funktion am besten so:</p>
+<p>löscht alle Einträge aus der Datenbank</p>
 
-<pre><code>$blog-&gt;delAllEnt();
-</code></pre>
+<p>Butze diese Funktion am besten so:</p>
+
+<div class="highlight highlight-php"><pre><span class="nv">$blog</span><span class="o">-&gt;</span><span class="na">delAllEnt</span><span class="p">();</span>
+</pre></div>
 
 <h3>
 <a name="closedb" class="anchor" href="#closedb"><span class="octicon octicon-link"></span></a>closeDB()</h3>
 
-<p>schließt die Datenbank
-<strong>rufe diese Funktion bitte immer am Ende einer PHP-Datei auf</strong>
+<p>schließt die Datenbank</p>
+
+<p><strong>rufe diese Funktion bitte immer am Ende einer PHP-Datei auf</strong>
 Butze diese Funktion am besten so:</p>
 
-<pre><code>$blog-&gt;delAllEnt();
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="nv">$blog</span><span class="o">-&gt;</span><span class="na">delAllEnt</span><span class="p">();</span>
+</pre></div>
       </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Easyportfolio maintained by <a href="https://github.com/denkenreden">denkenreden</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+    
+
   </body>
 </html>
